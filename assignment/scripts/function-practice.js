@@ -21,14 +21,14 @@ function helloName( name ) {
 console.log(helloName( name ));
 
 // 3. Function to add two numbers together & return the result
-function addNumbers( firstNumber ) {
-  // return firstNumber + secondNumber;
+function addNumbers( firstNumber, secondNumber ) {
+  return firstNumber + secondNumber;
 }
 
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree( ){
-
+function multiplyThree( firstNumber, secondNumber, thirdNumber ){
+  return firstNumber * secondNumber * thirdNumber;
 }
 
 
