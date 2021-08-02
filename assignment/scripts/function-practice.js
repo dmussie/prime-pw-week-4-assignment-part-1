@@ -50,7 +50,7 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
-let array = [];
+let array = ['new', 'glarus', 'spotted cow'];
 
 function getLast( array ) {
   the_last_item = array.pop();
@@ -61,16 +61,18 @@ console.log(getLast( array ));
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
+let arrayTwo = ['new', 'glarus', 'spotted cow'];
 function find( value, array ){
+  let returning = false;
   for (let i = 0; i < array.length; i++) {
+    // console.log(value, array[i]);
     if (array[i] === value) {
-      return true;
-    } else if (array[i] !== value) {
-      return false;
+      returning = true;
     }
   }
+  return returning;
 }
-
+console.log(find('Moderna', arrayTwo));
 // ----------------------
 // Stretch Goals
 // ----------------------
