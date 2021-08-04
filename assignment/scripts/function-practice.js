@@ -7,7 +7,7 @@ console.log('***** Function Practice *****')
 // 1. Function to return 'Hello World!'
 function hello() {
   return 'Hello World!';
-}
+};
 // Call the function to test
 console.log('Test - should say "Hello World!"', hello());
 
@@ -16,20 +16,20 @@ console.log('Test - should say "Hello World!"', hello());
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
   return 'Hello, Danny!';
-}
+};
 // Remember to call the function to test
 console.log(helloName( name ));
 
 // 3. Function to add two numbers together & return the result
 function addNumbers( firstNumber, secondNumber ) {
   return firstNumber + secondNumber;
-}
+};
 
 
 // 4. Function to multiply three numbers & return the result
 function multiplyThree( firstNumber, secondNumber, thirdNumber ){
   return firstNumber * secondNumber * thirdNumber;
-}
+};
 
 
 // 5. Function that will return true if a number is positive,
@@ -40,7 +40,7 @@ function isPositive( number ) {
   } else {
     return false;
   }
-}
+};
 // Call the function to test each outcome (true & false)
 // Write a separate console.log statement for each outcome
 console.log( 'isPositive - should say true', isPositive(3) );
@@ -55,7 +55,7 @@ let array = ['new', 'glarus', 'spotted cow'];
 function getLast( array ) {
   the_last_item = array.pop();
   return the_last_item;
-}
+};
 
 console.log(getLast( array ));
 // 7. Function to find a value in an array. Return true if the
@@ -71,7 +71,7 @@ function find( value, array ){
     }
   }
   return returning;
-}
+};
 console.log(find('Moderna', arrayTwo));
 // ----------------------
 // Stretch Goals
@@ -79,43 +79,53 @@ console.log(find('Moderna', arrayTwo));
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-  for (let i=0; i < string.length; i++) {
-    if (string[i] === letter) {
-      return true;
-    } else {
+  if (string[0] === letter){
+    return true;
+  }
+   else {
       return false;
     }
-  }
-}
+  };
+
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+function sumAll( array ) {
   let sum = 0
   // TODO: loop to add items
   for (let i=0; i < array.length; i++) {
     sum += array[i];
-    return sum;
   }
-}
-
+  return sum;
+};
+console.log(sumAll([1, 2, 67, 23]));
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-let newArray = []
+let neuArray = [99, 2, 7, 42, -80];
+
 function positiveNewArray ( array ) {
+  let newArray = []
   for(let i=0; i < array.length; i++) {
     if (array[i] > 0) {
-      newArray += array[i];
-      return newArray;
-    } else {
-      return newArray;
+      newArray.push(array[i]);
     }
   }
-}
-
+  return newArray;
+};
+console.log(positiveNewArray( neuArray ));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+// Tile Teamwork Tactics:
+// In a board game, a piece may advance 1-6 tiles forward depending on the number rolled on a six-sided dice.
+// If you advance your piece onto the same tile as another player's piece, both of you earn a bonus.
+// Given you and your friend's tile number, create a function that returns if it's possible to earn a bonus when you roll the dice.
+
+function possibleBonus ( myDice, friendDice ) {
+  console.log(myDice, friendDice);
+  return myDice - friendDice <= 6 && myDice - friendDice > 0;
+};
+console.log(possibleBonus(6, 5));
